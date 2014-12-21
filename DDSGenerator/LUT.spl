@@ -1,0 +1,6 @@
+[Inputs]
+Res
+=form[1:0]=
+[Outputs]
+Dac
+[BiDir]

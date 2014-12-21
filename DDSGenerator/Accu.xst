@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/Michael/Documents/VHDLproject/DDSGenerator/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/Michael/Documents/VHDLproject/DDSGenerator/xst"
+elaborate
+-ifn Accu.prj
+-ifmt mixed

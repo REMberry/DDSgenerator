@@ -1,0 +1,25 @@
+Running: C:\Xilinx\13.4\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/Michael/Desktop/DDSGenerator/testbench1_isim_beh.exe -prj C:/Users/Michael/Desktop/DDSGenerator/testbench1_beh.prj work.testbench1 
+ISim O.87xd (signature 0xc3576ebc)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/Michael/Desktop/DDSGenerator/Lut.vhd" into library work
+Parsing VHDL file "C:/Users/Michael/Desktop/DDSGenerator/Accu.vhd" into library work
+Parsing VHDL file "C:/Users/Michael/Desktop/DDSGenerator/Top.vhd" into library work
+Parsing VHDL file "C:/Users/Michael/Desktop/DDSGenerator/testbench1.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture behavioral of entity Accu [\Accu(20)\]
+Compiling architecture behavioral of entity LUT [\LUT(9,8)\]
+Compiling architecture behavioral of entity Top [\Top(20,9,8)\]
+Compiling architecture behavioral of entity testbench1
+Time Resolution for simulation is 1ps.
+Waiting for 2 sub-compilation(s) to finish...
+Compiled 11 VHDL Units
+Built simulation executable C:/Users/Michael/Desktop/DDSGenerator/testbench1_isim_beh.exe
+Fuse Memory Usage: 34580 KB
+Fuse CPU Usage: 701 ms

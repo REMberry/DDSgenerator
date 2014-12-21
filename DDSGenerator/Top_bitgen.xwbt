@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Michael\Documents\VHDLproject\DDSGenerator\Top.ncd
+OUTFILE=C:\Users\Michael\Documents\VHDLproject\DDSGenerator\Top.bit
+FAMILY=Spartan3
+PART=xc3s200-5ft256
+WORKINGDIR=C:\Users\Michael\Documents\VHDLproject\DDSGenerator
+LICENSE=WebPack
+USER_INFO=208252385_0_0_476

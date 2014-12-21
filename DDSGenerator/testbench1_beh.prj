@@ -1,0 +1,4 @@
+vhdl work "Lut.vhd"
+vhdl work "Accu.vhd"
+vhdl work "Top.vhd"
+vhdl work "testbench1.vhd"

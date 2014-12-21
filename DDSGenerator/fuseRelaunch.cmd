@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/Michael/Desktop/DDSGenerator/testbench1_isim_beh.exe" -prj "C:/Users/Michael/Desktop/DDSGenerator/testbench1_beh.prj" "work.testbench1" 

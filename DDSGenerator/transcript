@@ -1,0 +1,53 @@
+# Reading C:/Modeltech_pe_edu_10.1a/tcl/vsim/pref.tcl 
+# do {Top.fdo} 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim PE Student Edition vcom 10.1a Compiler 2012.02 Feb 22 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity LUT
+# -- Compiling architecture Behavioral of Lut
+# Model Technology ModelSim PE Student Edition vcom 10.1a Compiler 2012.02 Feb 22 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity Accu
+# -- Compiling architecture Behavioral of Accu
+# Model Technology ModelSim PE Student Edition vcom 10.1a Compiler 2012.02 Feb 22 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Top
+# -- Compiling architecture Behavioral of Top
+# //  ModelSim PE Student Edition 10.1a Feb 22 2012 
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# // NOT FOR CORPORATE OR PRODUCTION USE.
+# // THE ModelSim PE Student Edition IS NOT A SUPPORTED PRODUCT.
+# // FOR HIGHER EDUCATION PURPOSES ONLY
+# //
+# vsim -lib work -voptargs=\"+acc\" -t 1ps work.Top 
+# ** Error: ModelSim PE Student Edition license key file not found at C:\Modeltech_pe_edu_10.1a\win32pe_edu\..\student_license.dat.
+# ** FATAL ERROR: ModelSim PE Student Edition licensing failure due to one or more problems with the license key such as:
+# - it is not found
+# - it has expired
+# - it is not for this user
+# - it is not for this computer
+# - it is not for this version of ModelSim PE Student Edition.
+# 
+# Please go to http://www.model.com and download an updated copy of the ModelSim PE Student Edition.
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./Top.fdo PAUSED at line 29

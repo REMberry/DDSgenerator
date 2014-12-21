@@ -1,0 +1,8 @@
+vhdtdtfi -prj DDSGenerator -o C:/Users/Michael/Documents/VHDLproject/DDSGenerator/LUT.vhi -module LUT -template C:/Xilinx/13.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work Lut.vhd 
+vhdtdtfi -lib work Lut.vhd -prj DDSGenerator -o LUT.spl -module LUT -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3 LUT.spl C:/Users/Michael/Documents/VHDLproject/DDSGenerator/LUT.sym 
+vhdtdtfi -prj DDSGenerator -o C:/Users/Michael/Documents/VHDLproject/DDSGenerator/LUT.vhi -module LUT -template C:/Xilinx/13.4/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work Lut.vhd 
+vhdtdtfi -lib work Lut.vhd -prj DDSGenerator -o LUT.spl -module LUT -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3 LUT.spl C:/Users/Michael/Documents/VHDLproject/DDSGenerator/LUT.sym 
+vhdtdtfi -lib work Lut.vhd -prj DDSGenerator -o LUT.spl -module LUT -template C:/Xilinx/13.4/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3 LUT.spl C:/Users/Michael/Documents/VHDLproject/DDSGenerator/LUT.sym 

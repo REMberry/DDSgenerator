@@ -1,0 +1,7 @@
+[Inputs]
+Clk
+nReset
+=Step[18:0]=
+[Outputs]
+=DAC[7:0]=
+[BiDir]

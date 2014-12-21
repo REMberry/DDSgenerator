@@ -1,0 +1,505 @@
+Release 13.4 - xst O.87xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: Top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Top"
+Output Format                      : NGC
+Target Device                      : xc3s200-5-ft256
+
+---- Source Options
+Top Module Name                    : Top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/Michael/Documents/VHDLproject/DDSGenerator/Accu.vhd" in Library work.
+Architecture behavioral of Entity accu is up to date.
+Compiling vhdl file "C:/Users/Michael/Documents/VHDLproject/DDSGenerator/Lut.vhd" in Library work.
+Entity <lut> compiled.
+Entity <lut> (Architecture <behavioral>) compiled.
+Compiling vhdl file "C:/Users/Michael/Documents/VHDLproject/DDSGenerator/Top.vhd" in Library work.
+Architecture behavioral of Entity top is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <Top> in library <work> (architecture <behavioral>) with generics.
+	ACCU_BITS = 20
+	DAC_BITS = 8
+	LUT_BITS = 9
+
+Analyzing hierarchy for entity <Accu> in library <work> (architecture <behavioral>) with generics.
+	ACCU_BITS = 20
+
+Analyzing hierarchy for entity <LUT> in library <work> (architecture <behavioral>) with generics.
+	DAC_BITS = 8
+	LUT_BITS = 9
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing generic Entity <Top> in library <work> (Architecture <behavioral>).
+	ACCU_BITS = 20
+	DAC_BITS = 8
+	LUT_BITS = 9
+Entity <Top> analyzed. Unit <Top> generated.
+
+Analyzing generic Entity <Accu> in library <work> (Architecture <behavioral>).
+	ACCU_BITS = 20
+Entity <Accu> analyzed. Unit <Accu> generated.
+
+Analyzing generic Entity <LUT> in library <work> (Architecture <behavioral>).
+	DAC_BITS = 8
+	LUT_BITS = 9
+INFO:Xst:1561 - "C:/Users/Michael/Documents/VHDLproject/DDSGenerator/Lut.vhd" line 133: Mux is complete : default of case is discarded
+WARNING:Xst:819 - "C:/Users/Michael/Documents/VHDLproject/DDSGenerator/Lut.vhd" line 123: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <form>, <lut>, <lut2>
+Entity <LUT> analyzed. Unit <LUT> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Accu>.
+    Related source file is "C:/Users/Michael/Documents/VHDLproject/DDSGenerator/Accu.vhd".
+    Found 31-bit up accumulator for signal <accu>.
+    Summary:
+	inferred   1 Accumulator(s).
+Unit <Accu> synthesized.
+
+
+Synthesizing Unit <LUT>.
+    Related source file is "C:/Users/Michael/Documents/VHDLproject/DDSGenerator/Lut.vhd".
+WARNING:Xst:1781 - Signal <lut2> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <lut> is used but never assigned. Tied to default value.
+    Found 512x16-bit ROM for signal <Res$rom0000>.
+    Found 8-bit 4-to-1 multiplexer for signal <Dac>.
+    Found 9-bit comparator less for signal <Dac$cmp_lt0000> created at line 132.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   1 Comparator(s).
+	inferred   8 Multiplexer(s).
+Unit <LUT> synthesized.
+
+
+Synthesizing Unit <Top>.
+    Related source file is "C:/Users/Michael/Documents/VHDLproject/DDSGenerator/Top.vhd".
+WARNING:Xst:646 - Signal <res<10:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <Top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 512x16-bit ROM                                        : 1
+# Accumulators                                         : 1
+ 31-bit up accumulator                                 : 1
+# Comparators                                          : 1
+ 9-bit comparator less                                 : 1
+# Multiplexers                                         : 1
+ 8-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 512x16-bit ROM                                        : 1
+# Accumulators                                         : 1
+ 31-bit up accumulator                                 : 1
+# Comparators                                          : 1
+ 9-bit comparator less                                 : 1
+# Multiplexers                                         : 1
+ 8-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2677 - Node <AC/accu_20> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <AC/accu_21> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <AC/accu_22> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <AC/accu_23> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <AC/accu_24> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <AC/accu_25> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <AC/accu_26> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <AC/accu_27> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <AC/accu_28> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <AC/accu_29> of sequential type is unconnected in block <Top>.
+WARNING:Xst:2677 - Node <AC/accu_30> of sequential type is unconnected in block <Top>.
+
+Optimizing unit <Top> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Top, actual ratio is 8.
+FlipFlop AC/accu_11 has been replicated 1 time(s)
+FlipFlop AC/accu_12 has been replicated 1 time(s)
+FlipFlop AC/accu_13 has been replicated 1 time(s)
+FlipFlop AC/accu_14 has been replicated 1 time(s)
+FlipFlop AC/accu_15 has been replicated 1 time(s)
+FlipFlop AC/accu_16 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 26
+ Flip-Flops                                            : 26
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Top.ngr
+Top Level Output File Name         : Top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 31
+
+Cell Usage :
+# BELS                             : 370
+#      GND                         : 1
+#      INV                         : 1
+#      LUT1                        : 1
+#      LUT2                        : 28
+#      LUT3                        : 81
+#      LUT4                        : 135
+#      MUXCY                       : 19
+#      MUXF5                       : 58
+#      MUXF6                       : 17
+#      MUXF7                       : 8
+#      VCC                         : 1
+#      XORCY                       : 20
+# FlipFlops/Latches                : 26
+#      FDC                         : 26
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 30
+#      IBUF                        : 22
+#      OBUF                        : 8
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s200ft256-5 
+
+ Number of Slices:                      132  out of   1920     6%  
+ Number of Slice Flip Flops:             26  out of   3840     0%  
+ Number of 4 input LUTs:                246  out of   3840     6%  
+ Number of IOs:                          31
+ Number of bonded IOBs:                  31  out of    173    17%  
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+Clk                                | BUFGP                  | 26    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+nReset_inv(nReset_inv1_INV_0:O)    | NONE(AC/accu_0)        | 26    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 4.352ns (Maximum Frequency: 229.787MHz)
+   Minimum input arrival time before clock: 4.566ns
+   Maximum output required time after clock: 14.131ns
+   Maximum combinational path delay: 8.444ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Clk'
+  Clock period: 4.352ns (frequency: 229.787MHz)
+  Total number of paths / destination ports: 568 / 26
+-------------------------------------------------------------------------
+Delay:               4.352ns (Levels of Logic = 21)
+  Source:            AC/accu_0 (FF)
+  Destination:       AC/accu_19 (FF)
+  Source Clock:      Clk rising
+  Destination Clock: Clk rising
+
+  Data Path: AC/accu_0 to AC/accu_19
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.626   0.851  AC/accu_0 (AC/accu_0)
+     LUT2:I1->O            1   0.479   0.000  AC/Maccum_accu_lut<0> (AC/Maccum_accu_lut<0>)
+     MUXCY:S->O            1   0.435   0.000  AC/Maccum_accu_cy<0> (AC/Maccum_accu_cy<0>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<1> (AC/Maccum_accu_cy<1>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<2> (AC/Maccum_accu_cy<2>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<3> (AC/Maccum_accu_cy<3>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<4> (AC/Maccum_accu_cy<4>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<5> (AC/Maccum_accu_cy<5>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<6> (AC/Maccum_accu_cy<6>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<7> (AC/Maccum_accu_cy<7>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<8> (AC/Maccum_accu_cy<8>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<9> (AC/Maccum_accu_cy<9>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<10> (AC/Maccum_accu_cy<10>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<11> (AC/Maccum_accu_cy<11>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<12> (AC/Maccum_accu_cy<12>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<13> (AC/Maccum_accu_cy<13>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<14> (AC/Maccum_accu_cy<14>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<15> (AC/Maccum_accu_cy<15>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<16> (AC/Maccum_accu_cy<16>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<17> (AC/Maccum_accu_cy<17>)
+     MUXCY:CI->O           0   0.056   0.000  AC/Maccum_accu_cy<18> (AC/Maccum_accu_cy<18>)
+     XORCY:CI->O           1   0.786   0.000  AC/Maccum_accu_xor<19> (Result<19>)
+     FDC:D                     0.176          AC/accu_19
+    ----------------------------------------
+    Total                      4.352ns (3.501ns logic, 0.851ns route)
+                                       (80.4% logic, 19.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk'
+  Total number of paths / destination ports: 296 / 26
+-------------------------------------------------------------------------
+Offset:              4.566ns (Levels of Logic = 22)
+  Source:            Step<0> (PAD)
+  Destination:       AC/accu_19 (FF)
+  Destination Clock: Clk rising
+
+  Data Path: Step<0> to AC/accu_19
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.715   0.976  Step_0_IBUF (Step_0_IBUF)
+     LUT2:I0->O            1   0.479   0.000  AC/Maccum_accu_lut<0> (AC/Maccum_accu_lut<0>)
+     MUXCY:S->O            1   0.435   0.000  AC/Maccum_accu_cy<0> (AC/Maccum_accu_cy<0>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<1> (AC/Maccum_accu_cy<1>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<2> (AC/Maccum_accu_cy<2>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<3> (AC/Maccum_accu_cy<3>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<4> (AC/Maccum_accu_cy<4>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<5> (AC/Maccum_accu_cy<5>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<6> (AC/Maccum_accu_cy<6>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<7> (AC/Maccum_accu_cy<7>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<8> (AC/Maccum_accu_cy<8>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<9> (AC/Maccum_accu_cy<9>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<10> (AC/Maccum_accu_cy<10>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<11> (AC/Maccum_accu_cy<11>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<12> (AC/Maccum_accu_cy<12>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<13> (AC/Maccum_accu_cy<13>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<14> (AC/Maccum_accu_cy<14>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<15> (AC/Maccum_accu_cy<15>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<16> (AC/Maccum_accu_cy<16>)
+     MUXCY:CI->O           1   0.056   0.000  AC/Maccum_accu_cy<17> (AC/Maccum_accu_cy<17>)
+     MUXCY:CI->O           0   0.056   0.000  AC/Maccum_accu_cy<18> (AC/Maccum_accu_cy<18>)
+     XORCY:CI->O           1   0.786   0.000  AC/Maccum_accu_xor<19> (Result<19>)
+     FDC:D                     0.176          AC/accu_19
+    ----------------------------------------
+    Total                      4.566ns (3.590ns logic, 0.976ns route)
+                                       (78.6% logic, 21.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk'
+  Total number of paths / destination ports: 800 / 8
+-------------------------------------------------------------------------
+Offset:              14.131ns (Levels of Logic = 8)
+  Source:            AC/accu_11 (FF)
+  Destination:       DAC<4> (PAD)
+  Source Clock:      Clk rising
+
+  Data Path: AC/accu_11 to DAC<4>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q            106   0.626   2.230  AC/accu_11 (AC/accu_11)
+     LUT3:I0->O            9   0.479   1.125  res<16>71_SW1 (LT/Mrom_Res_rom0000101_bdd1)
+     LUT4:I1->O            1   0.479   0.000  LT/Mmux_Dac_165 (LT/Mmux_Dac_165)
+     MUXF5:I0->O           1   0.314   0.851  LT/Mmux_Dac_14_f5_4 (LT/Mmux_Dac_14_f55)
+     LUT3:I1->O            1   0.479   0.000  LT/Mmux_Dac_11 (LT/Mmux_Dac_11)
+     MUXF5:I0->O           1   0.314   0.851  LT/Mmux_Dac_9_f5 (LT/Mmux_Dac_9_f5)
+     LUT4:I1->O            1   0.479   0.000  LT/Mmux_Dac_44 (LT/Mmux_Dac_44)
+     MUXF5:I0->O           1   0.314   0.681  LT/Mmux_Dac_2_f5_3 (DAC_4_OBUF)
+     OBUF:I->O                 4.909          DAC_4_OBUF (DAC<4>)
+    ----------------------------------------
+    Total                     14.131ns (8.393ns logic, 5.738ns route)
+                                       (59.4% logic, 40.6% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 24 / 8
+-------------------------------------------------------------------------
+Delay:               8.444ns (Levels of Logic = 4)
+  Source:            Form<0> (PAD)
+  Destination:       DAC<7> (PAD)
+
+  Data Path: Form<0> to DAC<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            16   0.715   1.346  Form_0_IBUF (Form_0_IBUF)
+     LUT3:I0->O            1   0.479   0.000  LT/Mmux_Dac_371 (LT/Mmux_Dac_37)
+     MUXF5:I1->O           1   0.314   0.681  LT/Mmux_Dac_2_f5_6 (DAC_7_OBUF)
+     OBUF:I->O                 4.909          DAC_7_OBUF (DAC<7>)
+    ----------------------------------------
+    Total                      8.444ns (6.417ns logic, 2.027ns route)
+                                       (76.0% logic, 24.0% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.68 secs
+ 
+--> 
+
+Total memory usage is 264464 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   15 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+
